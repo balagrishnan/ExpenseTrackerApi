@@ -10,8 +10,10 @@ namespace ExpenseTrackerApi
             var builder = WebApplication.CreateBuilder(args);
 
             // 1. REGISTER SERVICES (Dependency Injection)
-            builder.Services.AddDbContext<ExpenseDbContext>(options =>
-                options.UseInMemoryDatabase("ExpenseList"));
+            //builder.Services.AddDbContext<ExpenseDbContext>(options =>
+            //    options.UseInMemoryDatabase("ExpenseList"));
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext<ExpenseDbContext>(options => options.UseSqlServer(connectionString));
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
