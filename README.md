@@ -35,3 +35,8 @@ Use controllers (uncheck to use minimal APIs): UNCHECK this box. (Unchecking thi
 Enable OpenAPI support: CHECK this box. (This automatically installs and configures Swagger for you).
 
 Click Create.
+
+--
+
+
+https://localhost:7200/api/expenses
